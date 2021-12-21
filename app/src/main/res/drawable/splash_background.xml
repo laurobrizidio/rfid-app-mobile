@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns="http://schemas.android.com/apk/res/android>"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:drawable="@android:color/white"/>
+    <item>
+        <bitmap  android:gravity="center" android:src="@drawable/uea_logo" />
+    </item>
+</layer-list>
