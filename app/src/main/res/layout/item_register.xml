@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="vehicle"
+            type="com.brizidiolauro.rfidapp.VehicleDTO" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/background_item"
     android:padding="15dp">
+
 
     <TextView
         android:id="@+id/text_card_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        tools:text="111111"
+        android:text="@{vehicle.code}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/text_vehicle_plate"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/text_vehicle_plate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@{vehicle.vehiclePlate}"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintStart_toEndOf="@id/text_card_id"
+        app:layout_constraintTop_toTopOf="@id/text_card_id" />
+    <TextView
+        android:id="@+id/text_isAuthorized"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textAlignment="center"
+        tools:text="Status: Autorizado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/text_card_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
